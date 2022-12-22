@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Color;
+use App\Models\User;
 
-class ColorSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,12 +16,10 @@ class ColorSeeder extends Seeder
     public function run()
     {
         //
-        $colors = ['white','blue','red','black'];
-
-        foreach($colors as $color){
-            Color::create([
-                'name' => $color
-            ]);
-        }
+        User::create([
+            'name'=>'Daniel Fuentes Herrera',
+            'email'=>'danielfuentes.corp@gmail.com',
+            'password'=>bcrypt('testtest'),
+        ]);
     }
 }
